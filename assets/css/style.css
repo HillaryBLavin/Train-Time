@@ -9,3 +9,9 @@ body {
     padding: 50px;
     text-align: center;
 }
+
+/* Media Queries */
+
+/* @media (max-width: 1020px) {
+    This is where the background image gets busted
+} */
