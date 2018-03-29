@@ -4,3 +4,8 @@ body {
     background-size: 100%;
     background-attachment: fixed;
 }
+
+#header {
+    padding: 50px;
+    text-align: center;
+}
