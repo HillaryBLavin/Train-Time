@@ -3,7 +3,7 @@
     // 2. Create a way to grab the values from the user input and save to the database
     // 3. Create a way to retrieve data from the database and write to the DOM
 
-// Initialize Firebase
+// 1. Initialize Firebase
 var config = {
     apiKey: "AIzaSyDfwy5wA_H-TJ-nNXsKier9XkTjg60EUcU",
     authDomain: "train-time-38b6a.firebaseapp.com",
@@ -17,4 +17,12 @@ firebase.initializeApp(config);
 // Create a variable to reference the database
 var database = firebase.database();
 
+// 2. Create a way to grab the values from the user input and save to the database
+// Add on-click event to the Submit button
+$("#add-train-btn").on("click", function(event) {
+    // Prevent submit button from submitting
+    event.preventDefault();
 
+    // Grab user input
+    var trainName = $("#inputName").val().trim();
+})
