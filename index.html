@@ -14,16 +14,20 @@
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar sticky-top navbar-light bg-light">
         <a class="navbar-brand" href="#">Train Time!</a>
     </nav>
+    <!-- Page Container -->
     <div class="container">
+        <!-- Header -->
         <div class="row">
             <div class="col 12" id="header">
                 <h1 class="display-1 text-center text-light">Welcome to Train Time!</h1>
                 <h3 class="text-center text-light">A customizable train schedule to help <i>you</i> stay on time.</h3>
             </div>
         </div>
+        <!-- User Input: "Add a Train" -->
         <div class="row">
             <div class="col 12">
                 <div class="card">
@@ -110,11 +114,15 @@
                                     <input type="text" class="form-control" id="frequency" placeholder="Destination City">
                                 </div>
                             </div>
+                            <div class="form-row justify-content-center">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Train Schedule -->
         <div class="row">
             <div class="col 12">
                 <div class="card">
