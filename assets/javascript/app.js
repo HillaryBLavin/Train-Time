@@ -36,7 +36,7 @@ $("#add-train-btn").on("click", function(event) {
     var firstTrain = $("#inputTime").val().trim();
     var frequency = $("#inputFrequency").val().trim();
     // This will be used later for writing to the database/DOM 
-    var trainCity = inputCity + ', ' + inputState;
+    var destination = inputCity + ', ' + inputState;
 
     // Validate user input
     if (trainName == "") {
@@ -70,6 +70,35 @@ $("#add-train-btn").on("click", function(event) {
     var minTil = frequency - timeRemain;
 
     // Calculate time next train will arrive
-    var eta = moment().add(minTil, "minutes");
+    var eta = moment(moment().add(minTil, "minutes")).format("HH:mm");
 
-})
+    // Create local temp object to hold data for the new train to be added
+    var newTrain = {
+        name: trainName,
+        destination: destination,
+        firstTrain: firstTrain,
+        frequency: frequency,
+        min: minTil,
+        next: eta
+    };
+
+    // Uploads added train to the database
+    database.ref().push(newTrain);
+
+    // Check your work with Console Log!
+    console.log(newTrain.name);
+    console.log(newTrain.destination);
+    console.log(newTrain.firstTrain);
+    console.log(newTrain.frequency);
+    console.log(newTrain.min);
+    console.log(newTrain.next);
+
+    // Alert the User
+    alert("New train successfully added!");
+
+    // Clears user-input from form
+    $("#inputName").val("");
+    $("#inputCity").val("");
+    $("#inputState").val("");
+    $("#inputTime").val("");
+});
