@@ -102,3 +102,26 @@ $("#add-train-btn").on("click", function(event) {
     $("#inputState").val("");
     $("#inputTime").val("");
 });
+
+// 3. Create a way to retrieve data from the database and write to the DOM
+database.ref().on("child_added", function(childSnapshot) {
+
+    console.log(childSnapshot.val());
+
+    // Store values from snapshot in variables
+    var trainName = childSnapshot.val().name;
+    var destination = childSnapshot.val().destination;
+    var frequency = childSnapshot.val().frequency;
+    var minTil = childSnapshot.val().min;
+    var eta = childSnapshot.val().next;
+
+    console.log(trainName);
+    console.log(destination);
+    console.log(frequency);
+    console.log(minTil);
+    console.log(eta);
+
+    // Add new train to the DOM
+    $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" +
+    frequency + "</td><td>" + eta + "</td><td>" + minTil + "</td></tr>");
+});
