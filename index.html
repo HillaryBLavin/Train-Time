@@ -107,11 +107,11 @@
                             <div class="form-row">
                                 <div class="form-group col-6">
                                     <label for="trainTime">First Train of the Day (24 Hour Clock)</label>
-                                    <input type="time" class="form-control" id="inputTime" placeholder="HH:mm">
+                                    <input type="text" class="form-control" id="inputTime" placeholder="HH:mm">
                                 </div>
                                 <div class="form-group col-6">
                                      <label for="frequency">Train Frequency (in minutes)</label>
-                                    <input type="number" class="form-control" id="inputFrequency">
+                                    <input type="number" class="form-control" id="inputFrequency" min="0">
                                 </div>
                             </div>
                             <div class="form-row justify-content-center">
@@ -132,7 +132,18 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
-
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Train Name</th>
+                                        <th scope="col">Destination</th>
+                                        <th scope="col">Frequency (mins)</th>
+                                        <th scope="col">Next Train</th>
+                                        <th scope="col">Minutes Away</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
                             </table>
                         </div>
                     </div>
