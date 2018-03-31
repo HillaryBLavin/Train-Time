@@ -17,6 +17,9 @@ firebase.initializeApp(config);
 // Create a variable to reference the database
 var database = firebase.database();
 
+// Create a variable to represent current time
+var currentTime = moment();
+
 // Create a variable for form validation for 24-Hour clock
 var h = /^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/
 
@@ -53,7 +56,20 @@ $("#add-train-btn").on("click", function(event) {
         return false;
     }
 
-    // Do some math to figure out 
+    // Math Time - these methods will calculate the time until the next train arrives
+    // Subtracting a year from the firstTrain will ensure that it occurs before the current time
+    var firstTrainConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
 
+    // Calculate the time difference between current time and the time of the first train
+    var timeDiff = moment().diff(moment(firstTrainConverted), "minutes");
+
+    // Calculate the remainder when the timeDiff is divided by frequency 
+    var timeRemain = timeDiff % frequency;
+
+    // Calculate minutes until next train arrives
+    var minTil = frequency - timeRemain;
+
+    // Calculate time next train will arrive
+    var eta = moment().add(minTil, "minutes");
 
 })
