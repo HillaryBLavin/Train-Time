@@ -10,6 +10,10 @@ body {
     text-align: center;
 }
 
+#add-train {
+    margin-bottom: 20px;
+}
+
 /* Media Queries */
 
 /* @media (max-width: 1020px) {

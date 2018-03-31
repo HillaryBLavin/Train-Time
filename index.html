@@ -14,10 +14,6 @@
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar sticky-top navbar-light bg-light">
-        <a class="navbar-brand" href="#">Train Time!</a>
-    </nav>
     <!-- Page Container -->
     <div class="container">
         <!-- Header -->
@@ -28,7 +24,7 @@
             </div>
         </div>
         <!-- User Input: "Add a Train" -->
-        <div class="row">
+        <div class="row" id="add-train">
             <div class="col 12">
                 <div class="card">
                     <div class="card-header text-center">
@@ -131,7 +127,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table">
+                            <table class="table" id="train-table">
                                 <thead>
                                     <tr>
                                         <th scope="col">Train Name</th>
